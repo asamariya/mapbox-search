@@ -3,14 +3,16 @@ import mapbox from 'mapbox-gl';
 
 export default class Map extends Component {
 	componentDidMount() {
+		const {latitude, longitude, style} = this.props.app;
+
 		mapbox.accessToken =
 			'pk.eyJ1IjoiYXNhbWFyaXlhIiwiYSI6ImNqejNoMjVleDAzNDMzYnN2azM3anA5cnYifQ.Z3gBIGRLYkSZo3ZQVWQNMg';
 
 		const map = new mapbox.Map({
 			container: 'map',
-			style: 'mapbox://styles/mapbox/streets-v11',
-			center: [144.988, -37.803],
-			zoom: 15
+			style: style,
+			center: [longitude, latitude],
+			zoom: 12
 		});
 
 		const navControl = new mapbox.NavigationControl();
