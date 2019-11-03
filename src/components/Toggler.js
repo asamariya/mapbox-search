@@ -13,14 +13,14 @@ export default class Toggler extends Component {
 			{name: 'Dark', url: 'mapbox://styles/mapbox/dark-v9'}
 		];
 
-		const buttons = styles.map(style => {
+		const buttons = styles.map((style, index) => {
 			let className = '';
 
 			if (style.url === this.props.app.state.style) {
 				className = 'selected';
 			}
 			return (
-				<button className={className} onClick={() => this.setLayer(style.url)}>
+				<button className={className} key={index} onClick={() => this.setLayer(style.url)}>
 					{style.name}
 				</button>
 			);

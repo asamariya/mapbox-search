@@ -4,6 +4,7 @@ import './App.scss';
 import Map from './components/Map';
 import Toggler from './components/Toggler';
 import Search from './components/Search';
+import PlacesPanel from './components/PlacesPanel';
 
 class App extends Component {
 	constructor(props) {
@@ -11,14 +12,16 @@ class App extends Component {
 
 		this.state = {
 			map: null,
-			latitude: -37.803,
 			longitude: 144.988,
-			style: 'mapbox://styles/mapbox/dark-v9'
+			latitude: -37.803,
+			style: 'mapbox://styles/mapbox/dark-v9',
+			places: []
 		};
 	}
 	render() {
 		return (
 			<div className="App">
+				<PlacesPanel app={this} />
 				<Search app={this} />
 				<Toggler app={this} />
 				<Map app={this} />
