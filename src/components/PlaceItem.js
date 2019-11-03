@@ -24,6 +24,7 @@ export default class PlaceItem extends Component {
 				closeButton: false
 			}).setHTML(name);
 
+			// eslint-disable-next-line no-unused-vars
 			const marker = new mapbox.Marker({
 				color: '#2727e6'
 			})
