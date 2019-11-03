@@ -18,7 +18,6 @@ export default class PlaceItem extends Component {
 		const {name, longitude, latitude} = this.props.place;
 		const {app} = this.props;
 		const {map} = app.state;
-		const {place} = this.props;
 
 		if (map) {
 			const popup = new mapbox.Popup({
