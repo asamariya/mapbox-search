@@ -3,6 +3,7 @@ import './App.scss';
 
 import Map from './components/Map';
 import Toggler from './components/Toggler';
+import Search from './components/Search';
 
 class App extends Component {
 	constructor(props) {
@@ -18,6 +19,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className="App">
+				<Search app={this} />
 				<Toggler app={this} />
 				<Map app={this} />
 			</div>
