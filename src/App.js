@@ -18,12 +18,23 @@ class App extends Component {
 			places: []
 		};
 	}
+
+	handleStyle = url => {
+		this.setState({
+			style: url
+		});
+	};
+	handlePlaces = places => {
+		this.setState({
+			places: places
+		});
+	};
 	render() {
 		return (
 			<div className="App">
-				<PlacesPanel app={this} />
-				<Search app={this} />
-				<Toggler app={this} />
+				<PlacesPanel places={this.state.places} map={this.state.map} />
+				<Search places={this.state.places} handlePlaces={this.handlePlaces} />
+				<Toggler style={this.state.style} handleStyle={this.handleStyle} />
 				<Map app={this} />
 			</div>
 		);

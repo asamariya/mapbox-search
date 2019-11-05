@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
 
 export default class Toggler extends Component {
-	setLayer(url) {
-		this.props.app.setState({
-			style: url
-		});
-	}
 	render() {
+		const handleStyle = this.props.handleStyle;
 		const styles = [
 			{name: 'Satellite', url: 'mapbox://styles/mapbox/satellite-v9'},
 			{name: 'Light', url: 'mapbox://styles/mapbox/light-v9'},
@@ -16,11 +12,11 @@ export default class Toggler extends Component {
 		const buttons = styles.map((style, index) => {
 			let className = '';
 
-			if (style.url === this.props.app.state.style) {
+			if (style.url === this.props.style) {
 				className = 'selected';
 			}
 			return (
-				<button className={className} key={index} onClick={() => this.setLayer(style.url)}>
+				<button className={className} key={index} onClick={() => handleStyle(style.url)}>
 					{style.name}
 				</button>
 			);

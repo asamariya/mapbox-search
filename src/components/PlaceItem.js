@@ -4,8 +4,8 @@ import mapbox from 'mapbox-gl';
 
 export default class PlaceItem extends Component {
 	goTo = () => {
-		const {app} = this.props;
-		const {map} = app.state;
+		// const {app} = this.props;
+		const {map} = this.props;
 		const {longitude, latitude} = this.props.place;
 
 		map.flyTo({
@@ -16,8 +16,8 @@ export default class PlaceItem extends Component {
 
 	render() {
 		const {name, longitude, latitude} = this.props.place;
-		const {app} = this.props;
-		const {map} = app.state;
+		// const {app} = this.props;
+		const {map} = this.props;
 
 		if (map) {
 			const popup = new mapbox.Popup({
